@@ -1,0 +1,13 @@
+name: hello
+
+on: [push]
+
+jobs:
+  great:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say Hello
+        run: echo "Hello, World!"
+
+      - name: Day and hour
+        run: date
