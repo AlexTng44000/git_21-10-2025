@@ -9,24 +9,24 @@ on:
 jobs:
   lint:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: rate-limiting-demo
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-
+      
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-
+      
       - name: Install dependencies
         run: npm ci
-
+        working-directory: rate-limiting-demo
+      
       - name: Run ESLint
         run: npm run lint
-
+        working-directory: rate-limiting-demo
+      
       - name: Check formatting
         run: npm run format:check
+        working-directory: rate-limiting-demo
